@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="160"
+    android:viewportHeight="160">
+    <!-- Tousled notebook sketch hair -->
+    <path
+        android:pathData="M50,52 C48,34 64,24 80,26 C96,24 112,35 110,52 C104,43 92,40 80,42 C68,40 56,44 50,52 Z"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M66,26 L62,17 M80,25 L82,15 M94,28 L101,20"
+        android:strokeColor="#29364A"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round" />
+    <!-- Head outline -->
+    <path
+        android:pathData="M52,52 C50,74 61,91 80,91 C99,91 110,74 108,52"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <!-- Eyes & gentle expression -->
+    <path
+        android:pathData="M67,62 C67,64 69,64 69,62 M91,62 C91,64 93,64 93,62"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.8"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M73,76 C77,80 83,80 87,76"
+        android:strokeColor="#29364A"
+        android:strokeWidth="3.4"
+        android:strokeLineCap="round" />
+    <!-- Sketchy collar & shoulders -->
+    <path
+        android:pathData="M48,134 C52,108 64,98 80,98 C96,98 108,108 112,134"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M68,98 L80,112 L92,98"
+        android:strokeColor="#29364A"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

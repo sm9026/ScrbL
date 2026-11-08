@@ -1,0 +1,137 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "8f49b6c72a5d104e9a1c3f8b2d6e5a91",
+    "entities": [
+      {
+        "tableName": "recalls",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `type` TEXT NOT NULL, `text_body` TEXT, `voice_relative_path` TEXT, `voice_title` TEXT, `created_at_epoch_millis` INTEGER NOT NULL, `captured_local_date` TEXT NOT NULL, `captured_zone_id` TEXT NOT NULL, `audio_duration_millis` INTEGER, `is_addressed` INTEGER NOT NULL DEFAULT 0, `is_favourite` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "textBody",
+            "columnName": "text_body",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "voiceRelativePath",
+            "columnName": "voice_relative_path",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "voiceTitle",
+            "columnName": "voice_title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAtEpochMillis",
+            "columnName": "created_at_epoch_millis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "capturedLocalDate",
+            "columnName": "captured_local_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "capturedZoneId",
+            "columnName": "captured_zone_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "audioDurationMillis",
+            "columnName": "audio_duration_millis",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isAddressed",
+            "columnName": "is_addressed",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "isFavourite",
+            "columnName": "is_favourite",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_recalls_created_at_epoch_millis",
+            "unique": false,
+            "columnNames": [
+              "created_at_epoch_millis"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_recalls_created_at_epoch_millis` ON `${TABLE_NAME}` (`created_at_epoch_millis`)"
+          },
+          {
+            "name": "index_recalls_captured_local_date",
+            "unique": false,
+            "columnNames": [
+              "captured_local_date"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_recalls_captured_local_date` ON `${TABLE_NAME}` (`captured_local_date`)"
+          },
+          {
+            "name": "idx_recalls_day_filters",
+            "unique": false,
+            "columnNames": [
+              "captured_local_date",
+              "is_addressed",
+              "is_favourite",
+              "type"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `idx_recalls_day_filters` ON `${TABLE_NAME}` (`captured_local_date`, `is_addressed`, `is_favourite`, `type`)"
+          },
+          {
+            "name": "idx_recalls_favourites",
+            "unique": false,
+            "columnNames": [
+              "is_favourite",
+              "created_at_epoch_millis"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `idx_recalls_favourites` ON `${TABLE_NAME}` (`is_favourite`, `created_at_epoch_millis`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8f49b6c72a5d104e9a1c3f8b2d6e5a91')"
+    ]
+  }
+}

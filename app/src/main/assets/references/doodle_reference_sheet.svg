@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+<rect width="760" height="430" rx="24" fill="#E9DDCA"/>
+<rect x="18" y="18" width="724" height="394" rx="18" fill="#F4E9D5" stroke="#D9CBB4" stroke-width="2"/>
+<g fill="none" stroke="#29364A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<!-- heart -->
+<path d="M185 178 C169 164 132 137 130 105 C128 81 146 67 165 72 C176 75 183 83 187 94 C196 75 210 70 228 76 C250 84 252 108 242 126 C231 148 204 166 185 178 Z"/>
+<!-- mic -->
+<rect x="348" y="64" width="30" height="66" rx="15"/><path d="M334 112 C334 145 348 160 363 160 C380 160 394 145 394 112 M363 160 L363 186 M345 186 L381 186"/>
+<!-- keyboard -->
+<rect x="500" y="81" width="128" height="82" rx="12"/><path d="M517 102 L526 102 M540 102 L549 102 M563 102 L572 102 M586 102 L595 102 M609 102 L618 102 M517 124 L526 124 M540 124 L549 124 M563 124 L572 124 M586 124 L595 124 M609 124 L618 124 M526 145 L542 145 M550 145 L577 145 M585 145 L604 145" stroke-width="4"/>
+<!-- check -->
+<path d="M132 303 L173 341 L247 258 M125 306 L170 349 M241 258 L253 250"/>
+</g>
+<g fill="#29364A" font-family="Georgia,serif" font-size="20" text-anchor="middle">
+<text x="185" y="220">heart</text><text x="363" y="220">microphone</text><text x="564" y="220">keyboard</text><text x="185" y="383">save tick</text>
+</g>
+<g fill="none" stroke="#29364A" stroke-width="3" stroke-linecap="round"><path d="M270 40 L282 50 M283 40 L287 53 M647 270 L657 260 M657 270 L670 264"/></g>
+</svg>

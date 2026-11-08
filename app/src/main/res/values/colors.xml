@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="scrbl_paper">#F4E9D5</color>
+    <color name="scrbl_paper_addressed">#EDE0C9</color>
+    <color name="scrbl_background">#E9DDCA</color>
+    <color name="scrbl_ink_navy">#29364A</color>
+    <color name="scrbl_addressed_tone">#65748A</color>
+    <color name="scrbl_unaddressed_tone">#29364A</color>
+    <color name="scrbl_terracotta">#C9786B</color>
+    <color name="scrbl_sage">#89917B</color>
+    <color name="scrbl_paper_edge">#D9CBB4</color>
+    <color name="scrbl_back_sheet_1">#EDE1CC</color>
+    <color name="scrbl_back_sheet_2">#D8C9B0</color>
+    <color name="scrbl_soft_shadow">#1A382D24</color>
+</resources>

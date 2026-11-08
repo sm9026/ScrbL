@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="500" viewBox="0 0 720 500">
+<rect width="720" height="500" rx="24" fill="#E9DDCA"/>
+<g stroke="#BFAF96" stroke-width="2" fill="#E8DCC6">
+  <path d="M180 107 Q180 92 197 92 L482 92 Q501 92 501 111 L501 377 Q501 392 484 392 L197 392 Q180 392 180 375 Z" transform="rotate(-4 340 242)"/>
+  <path d="M197 88 Q197 74 214 74 L500 74 Q518 74 518 92 L518 366 Q518 384 500 384 L214 384 Q197 384 197 366 Z" transform="rotate(2 358 229)"/>
+</g>
+<path d="M204 72 Q204 57 221 57 L508 57 Q526 57 526 75 L526 366 Q526 385 508 385 L221 385 Q204 385 204 366 Z" fill="#F4E9D5" stroke="#D9CBB4" stroke-width="2.5"/>
+<path d="M494 57 L526 88 L494 88 Z" fill="#E9DDCA" stroke="#D9CBB4" stroke-width="2"/>
+<g fill="none" stroke="#29364A" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+  <path d="M247 177 C235 165 210 147 209 124 C208 106 220 96 235 100 C244 102 249 109 252 117 C258 103 271 98 284 103 C301 110 302 128 294 141 C284 157 262 170 247 177 Z"/>
+  <path d="M245 225 Q350 215 464 225 M244 254 Q347 245 464 254 M248 283 Q342 275 447 283" stroke-width="2.8" opacity=".55"/>
+</g>
+<text x="360" y="442" text-anchor="middle" fill="#29364A" font-family="Georgia,serif" font-size="22">Layered paper • subtle grain • soft shadow</text>
+</svg>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp">
+
+    <!-- Top-spiral portrait notepad sheet with curled lower-right corner and layered sheets behind -->
+    <ImageView
+        android:id="@+id/widget_item_notepad_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_widget_notepad_card" />
+
+    <!-- Foreground reading surface inside the front sheet bounds -->
+    <RelativeLayout
+        android:id="@+id/widget_item_content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="26dp"
+        android:paddingTop="38dp"
+        android:paddingRight="28dp"
+        android:paddingBottom="34dp">
+
+        <!-- Top metadata row: compact date top-left, doodle heart top-right -->
+        <TextView
+            android:id="@+id/widget_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:fontFamily="serif"
+            android:textColor="@color/scrbl_ink_navy"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/widget_item_heart"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/cd_favourite_heart"
+            android:src="@drawable/ic_doodle_heart_outline" />
+
+        <!-- Centre content: either centred Text Recall body OR Voice Doodle Character + optional thought bubble -->
+        <FrameLayout
+            android:id="@+id/widget_item_center_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/widget_item_bottom_row"
+            android:layout_below="@id/widget_item_date"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/widget_item_text_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLines="6"
+                android:textAlignment="center"
+                android:textColor="@color/scrbl_ink_navy"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/widget_item_voice_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/widget_item_voice_title_bubble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/bg_thought_bubble"
+                    android:ellipsize="end"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:maxWidth="160dp"
+                    android:textColor="@color/scrbl_ink_navy"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/widget_item_voice_character"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:contentDescription="@string/cd_voice_character"
+                    android:src="@drawable/ic_voice_character_boy" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Bottom metadata row: time bottom-left, position index bottom-right -->
+        <RelativeLayout
+            android:id="@+id/widget_item_bottom_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/widget_item_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="serif"
+                android:textColor="@color/scrbl_addressed_tone"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/widget_item_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="serif"
+                android:textColor="@color/scrbl_addressed_tone"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

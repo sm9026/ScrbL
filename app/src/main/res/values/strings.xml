@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScrbL</string>
+    <string name="widget_name">ScrbL Notepad</string>
+    <string name="widget_description">Top-spiral pocket notepad displaying up to your 19 most recent thoughts. Flick up for older, flick down for newer.</string>
+    <string name="widget_empty_prompt">Tap to catch a fleeting thought</string>
+    <string name="cd_profile_settings">Profile and settings</string>
+    <string name="cd_filter">Filter day recalls</string>
+    <string name="cd_capture_plus">Capture a new thought</string>
+    <string name="cd_keyboard_mode">Write a text recall (up to 25 words)</string>
+    <string name="cd_microphone_mode">Record a voice recall (up to 37 seconds)</string>
+    <string name="cd_save_tick">Save text recall</string>
+    <string name="cd_stop_voice">Stop and save voice recall</string>
+    <string name="cd_favourite_heart">Toggle favourite</string>
+    <string name="cd_voice_character">Tap to play or pause voice recording</string>
+    <string name="action_toggle_addressed">Toggle addressed status</string>
+</resources>

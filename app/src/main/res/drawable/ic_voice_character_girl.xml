@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="160"
+    android:viewportHeight="160">
+    <!-- Wavy bob & side bun notebook sketch -->
+    <path
+        android:pathData="M44,78 C40,46 56,26 80,26 C104,26 120,46 116,78"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M52,48 C62,40 74,44 82,38 C90,44 100,42 108,48"
+        android:strokeColor="#29364A"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round" />
+    <!-- Head outline -->
+    <path
+        android:pathData="M53,52 C51,74 62,90 80,90 C98,90 109,74 107,52"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round" />
+    <!-- Eyes & smile -->
+    <path
+        android:pathData="M67,62 C67,64 69,64 69,62 M91,62 C91,64 93,64 93,62"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.8"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M72,75 C77,80 83,80 88,75"
+        android:strokeColor="#29364A"
+        android:strokeWidth="3.4"
+        android:strokeLineCap="round" />
+    <!-- Shoulders & notebook scarf/collar -->
+    <path
+        android:pathData="M46,134 C51,108 64,97 80,97 C96,97 109,108 114,134"
+        android:strokeColor="#29364A"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M64,100 C72,107 88,107 96,100"
+        android:strokeColor="#C9786B"
+        android:strokeWidth="3.6"
+        android:strokeLineCap="round" />
+</vector>

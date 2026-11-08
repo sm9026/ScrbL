@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760">
+<rect width="600" height="760" rx="28" fill="#E9DDCA"/>
+<rect x="85" y="92" width="430" height="590" rx="22" fill="#D8C9B0" stroke="#BFAF96" stroke-width="2" transform="rotate(2 300 380)"/>
+<rect x="75" y="82" width="430" height="590" rx="22" fill="#EDE1CC" stroke="#CDBDA3" stroke-width="2" transform="rotate(-1.2 290 377)"/>
+<path d="M86 106 Q86 82 110 82 L470 82 Q494 82 494 106 L494 624 Q494 650 468 650 L110 650 Q86 650 86 624 Z" fill="#F4E9D5" stroke="#D9CBB4" stroke-width="3"/>
+<!-- binding loops -->
+<g fill="none" stroke="#29364A" stroke-width="6" stroke-linecap="round">
+ <path d="M128 93 C128 55 160 55 160 93 M192 93 C192 55 224 55 224 93 M256 93 C256 55 288 55 288 93 M320 93 C320 55 352 55 352 93 M384 93 C384 55 416 55 416 93 M448 93 C448 55 480 55 480 93"/>
+</g>
+<!-- page corner curl -->
+<path d="M443 650 L494 599 L494 627 Q494 650 470 650 Z" fill="#E4D5BC" stroke="#D0C0A6" stroke-width="2"/>
+<path d="M443 650 Q455 626 494 599" fill="none" stroke="#BFAF96" stroke-width="2"/>
+<!-- content sample -->
+<g fill="none" stroke="#29364A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M178 222 Q290 214 400 222 M175 255 Q286 247 400 255 M180 288 Q287 280 394 288" stroke-width="2.7" opacity=".55"/>
+ <path d="M408 153 C398 145 382 132 382 119 C382 108 390 102 400 104 C406 105 410 110 412 116 C417 107 426 104 435 108 C447 112 448 124 442 133 C435 143 421 151 408 153 Z"/>
+</g>
+<text x="300" y="715" fill="#29364A" font-family="Georgia,serif" font-size="21" text-anchor="middle">Portrait widget • top spiral • curled corner</text>
+</svg>
