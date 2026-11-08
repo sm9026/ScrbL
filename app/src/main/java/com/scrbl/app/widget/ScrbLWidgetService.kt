@@ -59,13 +59,7 @@ class ScrbLWidgetFactory(
     }
 
     override fun onDataSetChanged() {
-        Log.d(TAG, "onDataSetChanged() started")
-
-        val app = context.applicationContext as? ScrbLApplication
-        if (app == null) {
-            Log.e(TAG, "Application cast failed: expected ScrbLApplication")
-            return
-        }
+        val app = context.applicationContext as? ScrbLApplication ?: return
 
         try {
             runBlocking {

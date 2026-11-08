@@ -6,7 +6,7 @@
 
     <!--
       Single front warm ivory notepad sheet with curled lower-right corner.
-      Uses Handwritten font (@font/scrbl_handwritten_regular), matching FontFamilyOption.HANDWRITTEN.
+      Uses Handwritten font (@font/scrbl_handwritten_test), matching FontFamilyOption.HANDWRITTEN.
     -->
     <ImageView
         android:id="@+id/widget_item_notepad_bg"
@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:fontFamily="@font/scrbl_handwritten_regular"
+                    android:fontFamily="@font/scrbl_handwritten_test"
                     android:includeFontPadding="false"
                     android:maxLines="1"
                     android:textColor="@color/scrbl_ink_navy"
@@ -89,7 +89,7 @@
                         android:autoSizeTextType="uniform"
                         android:breakStrategy="balanced"
                         android:ellipsize="end"
-                        android:fontFamily="@font/scrbl_handwritten_regular"
+                        android:fontFamily="@font/scrbl_handwritten_test"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:lineSpacingMultiplier="1.12"
@@ -116,7 +116,7 @@
                             android:layout_marginBottom="4dp"
                             android:background="@drawable/bg_thought_bubble"
                             android:ellipsize="end"
-                            android:fontFamily="@font/scrbl_handwritten_regular"
+                            android:fontFamily="@font/scrbl_handwritten_test"
                             android:gravity="center"
                             android:includeFontPadding="false"
                             android:maxLines="2"
@@ -146,7 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:fontFamily="@font/scrbl_handwritten_regular"
+                        android:fontFamily="@font/scrbl_handwritten_test"
                         android:includeFontPadding="false"
                         android:maxLines="1"
                         android:textColor="@color/scrbl_addressed_tone"
@@ -157,7 +157,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:fontFamily="@font/scrbl_handwritten_regular"
+                        android:fontFamily="@font/scrbl_handwritten_test"
                         android:includeFontPadding="false"
                         android:maxLines="1"
                         android:textColor="@color/scrbl_addressed_tone"
