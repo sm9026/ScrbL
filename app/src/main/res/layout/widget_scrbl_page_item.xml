@@ -2,10 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/widget_item_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="2dp">
+    android:layout_height="match_parent">
 
-    <!-- Top-spiral portrait notepad sheet with curled lower-right corner and layered sheets behind -->
+    <!--
+      Single front warm ivory notepad sheet with curled lower-right corner.
+      The front sheet in bg_widget_notepad_card.xml spans:
+      - X: 86..494 in a 600-wide viewport (left 14.33%, right 17.67%)
+      - Y: 82..650 in a 760-tall viewport (top 10.79%, bottom 14.47%)
+      - Curled corner flap: X 443..494, Y 599..650
+    -->
     <ImageView
         android:id="@+id/widget_item_notepad_bg"
         android:layout_width="match_parent"
@@ -14,119 +19,184 @@
         android:scaleType="fitXY"
         android:src="@drawable/bg_widget_notepad_card" />
 
-    <!-- Foreground reading surface inside the front sheet bounds -->
-    <RelativeLayout
-        android:id="@+id/widget_item_content_frame"
+    <!--
+      Proportional 3x3 WeightSum grid locking the usable paper interior to the exact vector bounds
+      at EVERY launcher widget size and aspect ratio:
+      - Columns (weightSum = 600): Left margin 108 | Usable paper interior 368 (X 108..476) | Right margin 124
+      - Rows (weightSum = 760): Top margin 106 (below spiral loops at Y=93) | Usable paper interior 516 (Y 106..622) | Bottom margin 138
+    -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="26dp"
-        android:paddingTop="38dp"
-        android:paddingRight="28dp"
-        android:paddingBottom="34dp">
+        android:orientation="vertical"
+        android:weightSum="760">
 
-        <!-- Top metadata row: compact date top-left, doodle heart top-right -->
+        <!-- Top margin clearing the notebook top edge (Y=82) and spiral loop ends (Y=93) -->
         <TextView
-            android:id="@+id/widget_item_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:fontFamily="serif"
-            android:textColor="@color/scrbl_ink_navy"
-            android:textSize="11sp" />
-
-        <ImageView
-            android:id="@+id/widget_item_heart"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:contentDescription="@string/cd_favourite_heart"
-            android:src="@drawable/ic_doodle_heart_outline" />
-
-        <!-- Centre content: either centred Text Recall body OR Voice Doodle Character + optional thought bubble -->
-        <FrameLayout
-            android:id="@+id/widget_item_center_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/widget_item_bottom_row"
-            android:layout_below="@id/widget_item_date"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp">
+            android:layout_height="0dp"
+            android:layout_weight="106" />
 
+        <!-- Middle row spanning the vertical interior of the front paper sheet (Y 106..622) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="516"
+            android:orientation="horizontal"
+            android:weightSum="600">
+
+            <!-- Left margin clearing the left paper edge (X=86) plus inner breathing room -->
             <TextView
-                android:id="@+id/widget_item_text_body"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:ellipsize="end"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.2"
-                android:maxLines="6"
-                android:textAlignment="center"
-                android:textColor="@color/scrbl_ink_navy"
-                android:textSize="14sp"
-                android:visibility="visible" />
+                android:layout_weight="108" />
 
-            <LinearLayout
-                android:id="@+id/widget_item_voice_container"
-                android:layout_width="match_parent"
+            <!--
+              Foreground reading surface strictly inside the visible front paper sheet (X 108..476, Y 106..622).
+              Uses Classic Serif (@font/scrbl_serif_regular), matching FontFamilyOption.SERIF.
+            -->
+            <RelativeLayout
+                android:id="@+id/widget_item_content_frame"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:layout_weight="368"
+                android:clipChildren="true"
+                android:clipToPadding="true">
 
+                <!-- Top metadata row: compact date top-left, doodle heart top-right -->
                 <TextView
-                    android:id="@+id/widget_item_voice_title_bubble"
+                    android:id="@+id/widget_item_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:background="@drawable/bg_thought_bubble"
-                    android:ellipsize="end"
-                    android:fontFamily="serif"
-                    android:gravity="center"
-                    android:maxLines="2"
-                    android:maxWidth="160dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:fontFamily="@font/scrbl_serif_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
                     android:textColor="@color/scrbl_ink_navy"
-                    android:textSize="11sp"
-                    android:visibility="gone" />
+                    android:textSize="11sp" />
 
                 <ImageView
-                    android:id="@+id/widget_item_voice_character"
-                    android:layout_width="68dp"
-                    android:layout_height="68dp"
-                    android:contentDescription="@string/cd_voice_character"
-                    android:src="@drawable/ic_voice_character_boy" />
-            </LinearLayout>
-        </FrameLayout>
+                    android:id="@+id/widget_item_heart"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/cd_favourite_heart"
+                    android:src="@drawable/ic_doodle_heart_outline" />
 
-        <!-- Bottom metadata row: time bottom-left, position index bottom-right -->
-        <RelativeLayout
-            android:id="@+id/widget_item_bottom_row"
+                <!-- Centre content: either centred Text Recall body OR Voice Doodle Character + optional thought bubble -->
+                <FrameLayout
+                    android:id="@+id/widget_item_center_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/widget_item_bottom_row"
+                    android:layout_below="@id/widget_item_date"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:clipChildren="true"
+                    android:clipToPadding="true">
+
+                    <TextView
+                        android:id="@+id/widget_item_text_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autoSizeMaxTextSize="15sp"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform"
+                        android:breakStrategy="balanced"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/scrbl_serif_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:lineSpacingMultiplier="1.15"
+                        android:maxLines="5"
+                        android:paddingStart="2dp"
+                        android:paddingEnd="2dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/scrbl_ink_navy"
+                        android:textSize="13sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/widget_item_voice_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/widget_item_voice_title_bubble"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/bg_thought_bubble"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/scrbl_serif_regular"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLines="2"
+                            android:maxWidth="140dp"
+                            android:textColor="@color/scrbl_ink_navy"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/widget_item_voice_character"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:contentDescription="@string/cd_voice_character"
+                            android:src="@drawable/ic_voice_character_boy" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Bottom metadata row: creation time bottom-left, page index bottom-right (clear of curled corner) -->
+                <RelativeLayout
+                    android:id="@+id/widget_item_bottom_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/widget_item_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/scrbl_serif_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:textColor="@color/scrbl_addressed_tone"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/widget_item_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/scrbl_serif_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:textColor="@color/scrbl_addressed_tone"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- Right margin clearing the right paper edge (X=494) -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="124" />
+        </LinearLayout>
+
+        <!-- Bottom margin clearing the bottom paper edge (Y=650) and lower curled corner -->
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
-
-            <TextView
-                android:id="@+id/widget_item_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:fontFamily="serif"
-                android:textColor="@color/scrbl_addressed_tone"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/widget_item_position"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="14dp"
-                android:fontFamily="serif"
-                android:textColor="@color/scrbl_addressed_tone"
-                android:textSize="10sp" />
-        </RelativeLayout>
-
-    </RelativeLayout>
+            android:layout_height="0dp"
+            android:layout_weight="138" />
+    </LinearLayout>
 
 </FrameLayout>

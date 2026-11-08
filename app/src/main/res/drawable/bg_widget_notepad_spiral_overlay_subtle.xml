@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="380dp"
+    android:viewportWidth="600"
+    android:viewportHeight="760">
+    <!--
+      Restrained low-contrast top-spiral binding variant matching WidgetSpiralOption.SUBTLE.
+    -->
+    <path
+        android:pathData="M128,93 C128,55 160,55 160,93 M192,93 C192,55 224,55 224,93 M256,93 C256,55 288,55 288,93 M320,93 C320,55 352,55 352,93 M384,93 C384,55 416,55 416,93 M448,93 C448,55 480,55 480,93"
+        android:strokeColor="#65748A"
+        android:strokeWidth="5.8"
+        android:strokeLineCap="round" />
+</vector>

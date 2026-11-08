@@ -4,18 +4,12 @@
     android:height="380dp"
     android:viewportWidth="600"
     android:viewportHeight="760">
-    <!-- Layered back sheets -->
-    <path
-        android:fillColor="#D8C9B0"
-        android:pathData="M95,96 L505,108 Q525,109 524,129 L504,658 Q503,678 483,677 L75,662 Q55,661 56,641 L75,115 Q76,95 95,96 Z"
-        android:strokeColor="#BFAF96"
-        android:strokeWidth="2.5" />
-    <path
-        android:fillColor="#EDE1CC"
-        android:pathData="M82,88 L492,80 Q512,80 512,100 L520,642 Q520,662 500,662 L92,668 Q72,668 72,648 L64,108 Q64,88 82,88 Z"
-        android:strokeColor="#CDBDA3"
-        android:strokeWidth="2.5" />
-    <!-- Front warm ivory page with curled lower-right corner -->
+    <!--
+      Single front warm ivory notepad sheet with curled lower-right corner.
+      Underlying stack sheets and the continuous top spiral binding are rendered once
+      at the outer notepad container level (widget_scrbl_notepad.xml) so individual
+      StackView items never repeat spirals or back-stack layers.
+    -->
     <path
         android:fillColor="#F4E9D5"
         android:pathData="M86,106 Q86,82 110,82 L470,82 Q494,82 494,106 L494,599 L443,650 L110,650 Q86,650 86,624 Z"
@@ -31,10 +25,4 @@
         android:pathData="M443,650 Q455,626 494,599"
         android:strokeColor="#BFAF96"
         android:strokeWidth="2.5" />
-    <!-- Top spiral binding loops -->
-    <path
-        android:pathData="M128,93 C128,55 160,55 160,93 M192,93 C192,55 224,55 224,93 M256,93 C256,55 288,55 288,93 M320,93 C320,55 352,55 352,93 M384,93 C384,55 416,55 416,93 M448,93 C448,55 480,55 480,93"
-        android:strokeColor="#29364A"
-        android:strokeWidth="6.5"
-        android:strokeLineCap="round" />
 </vector>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="380dp"
+    android:viewportWidth="600"
+    android:viewportHeight="760">
+    <!--
+      Stationary underlying notebook paper stack (back layers only).
+      Rendered once behind the StackView in widget_scrbl_notepad.xml so underlying sheets
+      read as plain paper layers without repeating metadata or separate spiral bindings.
+    -->
+    <path
+        android:fillColor="#D8C9B0"
+        android:pathData="M95,96 L505,108 Q525,109 524,129 L504,658 Q503,678 483,677 L75,662 Q55,661 56,641 L75,115 Q76,95 95,96 Z"
+        android:strokeColor="#BFAF96"
+        android:strokeWidth="2.5" />
+    <path
+        android:fillColor="#EDE1CC"
+        android:pathData="M82,88 L492,80 Q512,80 512,100 L520,642 Q520,662 500,662 L92,668 Q72,668 72,648 L64,108 Q64,88 82,88 Z"
+        android:strokeColor="#CDBDA3"
+        android:strokeWidth="2.5" />
+</vector>

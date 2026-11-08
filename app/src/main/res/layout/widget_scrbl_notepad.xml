@@ -6,7 +6,20 @@
     android:padding="4dp">
 
     <!--
-      Classic Collection App Widget using StackView for rolodex-style up/down front-page flicks.
+      1. Stationary underlying plain paper sheets (back layers only).
+      Rendered once at the notebook container level so underlying sheets provide physical depth
+      without repeating metadata or separate spiral bindings.
+    -->
+    <ImageView
+        android:id="@+id/widget_notepad_stack_base"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_widget_notepad_stack_base" />
+
+    <!--
+      2. Classic Collection App Widget using StackView for rolodex-style up/down front-page flicks.
       Notice: NO plus button on the widget face (strictly enforced by 02_REQUIREMENTS_AND_RULES.md).
     -->
     <StackView
@@ -16,7 +29,11 @@
         android:animateLayoutChanges="true"
         android:loopViews="false" />
 
-    <!-- Empty state when 0 recalls exist in Room; tapping opens blank Capture page -->
+    <!--
+      3. Empty state when 0 recalls exist in Room; tapping opens blank Capture page.
+      Includes variant TextViews for each of the 3 bundled app fonts (Serif, Handwritten, Sans)
+      so the empty notepad face also reflects the user's selected app font.
+    -->
     <FrameLayout
         android:id="@+id/widget_empty_view"
         android:layout_width="match_parent"
@@ -36,16 +53,17 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="32dp"
-            android:paddingTop="44dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="36dp">
+            android:paddingStart="38dp"
+            android:paddingTop="46dp"
+            android:paddingEnd="44dp"
+            android:paddingBottom="56dp">
 
+            <!-- Classic Serif (default) -->
             <TextView
                 android:id="@+id/widget_empty_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="serif"
+                android:fontFamily="@font/scrbl_serif_bold"
                 android:gravity="center"
                 android:text="@string/app_name"
                 android:textColor="@color/scrbl_ink_navy"
@@ -56,14 +74,79 @@
                 android:id="@+id/widget_empty_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="serif"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/scrbl_serif_regular"
                 android:gravity="center"
                 android:lineSpacingMultiplier="1.15"
                 android:text="@string/widget_empty_prompt"
                 android:textColor="@color/scrbl_addressed_tone"
                 android:textSize="13sp" />
+
+            <!-- Handwritten variant -->
+            <TextView
+                android:id="@+id/widget_empty_title_handwritten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/scrbl_handwritten_regular"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/scrbl_ink_navy"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/widget_empty_subtitle_handwritten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/scrbl_handwritten_regular"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.15"
+                android:text="@string/widget_empty_prompt"
+                android:textColor="@color/scrbl_addressed_tone"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <!-- Clean Sans variant -->
+            <TextView
+                android:id="@+id/widget_empty_title_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/scrbl_sans_bold"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/scrbl_ink_navy"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/widget_empty_subtitle_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/scrbl_sans_regular"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.15"
+                android:text="@string/widget_empty_prompt"
+                android:textColor="@color/scrbl_addressed_tone"
+                android:textSize="13sp"
+                android:visibility="gone" />
         </LinearLayout>
     </FrameLayout>
+
+    <!--
+      4. Single continuous top-spiral binding shared across the entire notebook stack.
+      Non-clickable and non-focusable so all flick and tap gestures pass straight through to StackView.
+    -->
+    <ImageView
+        android:id="@+id/widget_notepad_spiral_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:contentDescription="@null"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_widget_notepad_spiral_overlay" />
 
 </FrameLayout>

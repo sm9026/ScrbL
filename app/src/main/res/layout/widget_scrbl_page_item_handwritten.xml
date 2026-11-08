@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+      Single front warm ivory notepad sheet with curled lower-right corner.
+      Uses Handwritten font (@font/scrbl_handwritten_regular), matching FontFamilyOption.HANDWRITTEN.
+    -->
+    <ImageView
+        android:id="@+id/widget_item_notepad_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_widget_notepad_card" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="760">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="106" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="516"
+            android:orientation="horizontal"
+            android:weightSum="600">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="108" />
+
+            <RelativeLayout
+                android:id="@+id/widget_item_content_frame"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="368"
+                android:clipChildren="true"
+                android:clipToPadding="true">
+
+                <TextView
+                    android:id="@+id/widget_item_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:fontFamily="@font/scrbl_handwritten_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/scrbl_ink_navy"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/widget_item_heart"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/cd_favourite_heart"
+                    android:src="@drawable/ic_doodle_heart_outline" />
+
+                <FrameLayout
+                    android:id="@+id/widget_item_center_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/widget_item_bottom_row"
+                    android:layout_below="@id/widget_item_date"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:clipChildren="true"
+                    android:clipToPadding="true">
+
+                    <TextView
+                        android:id="@+id/widget_item_text_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autoSizeMaxTextSize="17sp"
+                        android:autoSizeMinTextSize="11sp"
+                        android:autoSizeStepGranularity="1sp"
+                        android:autoSizeTextType="uniform"
+                        android:breakStrategy="balanced"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/scrbl_handwritten_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:lineSpacingMultiplier="1.12"
+                        android:maxLines="5"
+                        android:paddingStart="2dp"
+                        android:paddingEnd="2dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/scrbl_ink_navy"
+                        android:textSize="15sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/widget_item_voice_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/widget_item_voice_title_bubble"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/bg_thought_bubble"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/scrbl_handwritten_regular"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLines="2"
+                            android:maxWidth="140dp"
+                            android:textColor="@color/scrbl_ink_navy"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/widget_item_voice_character"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:contentDescription="@string/cd_voice_character"
+                            android:src="@drawable/ic_voice_character_boy" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:id="@+id/widget_item_bottom_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/widget_item_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/scrbl_handwritten_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:textColor="@color/scrbl_addressed_tone"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/widget_item_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/scrbl_handwritten_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:textColor="@color/scrbl_addressed_tone"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="124" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="138" />
+    </LinearLayout>
+
+</FrameLayout>
